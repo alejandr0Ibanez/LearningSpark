@@ -204,3 +204,6 @@ df2.createOrReplaceTempView("us_origin_airport_JFK_tmp_view")
 // COMMAND ----------
 
 display(spark.catalog.listTables(dbName="global_temp"))
+
+// COMMAND ----------
+

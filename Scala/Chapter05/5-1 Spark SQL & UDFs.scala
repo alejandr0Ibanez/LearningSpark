@@ -202,7 +202,7 @@ spark.sql("""SELECT celsius, filter(celsius, t -> t > 38) as high FROM tC""").sh
 spark.sql("""
 SELECT celsius, exists(celsius, t -> t = 38) as threshold
 FROM tC
-""").show()
+""").show(truncate=false)
 
 // COMMAND ----------
 
@@ -378,7 +378,7 @@ SELECT origin, destination, sum(TotalDelays) as TotalDelays
  FROM departureDelaysWindow
 WHERE origin = 'SEA'
 GROUP BY origin, destination
-ORDER BY sum(TotalDelays) DESC
+ORDER BY TotalDelays DESC
 LIMIT 3
 """).show()
 
